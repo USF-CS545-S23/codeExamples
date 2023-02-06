@@ -76,6 +76,7 @@ public class SortingAlgorithms {
         mergeSort(arr, temp, mid + 1, high);
         merge(arr, temp, low, mid, high); // merge two sorted halves into one
         // sorted list
+        System.out.println(Arrays.toString(arr));
     }
 
     /**
@@ -120,7 +121,8 @@ public class SortingAlgorithms {
 
 
     public static void main(String[] args) {
-        int[] arr = {5, 1, 8, 2, 6, 4, 3};//{5, 10, 6, 1, 8};
+       // int[] arr = {5, 1, 8, 2, 6, 4, 3};//{5, 10, 6, 1, 8};
+        int[] arr = {17, 10, 15, 13, 4, 12, 7, 9, 16, 8, 5, 14, 3};
         System.out.println(Arrays.toString(arr));
         // selectionSort(arr);
         // bubbleSort(arr);
