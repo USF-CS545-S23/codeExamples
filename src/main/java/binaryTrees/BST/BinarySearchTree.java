@@ -9,14 +9,18 @@ class BinarySearchTree {
     private class BSTNode {
         int data; // value stored at the node
         BSTNode left; // left subtree
-        BSTNode right;  // right subtree
+        BSTNode right; // right subtree
 
         BSTNode(int newdata) {
             data = newdata;
         }
     }
 
-    private BSTNode root; // the root of the tree
+    private BSTNode root; // the root of the tree, an instance variable of class BinarySearchTree
+
+    BinarySearchTree() {
+        root = null; // initially, the tree is empty
+    }
 
     /**
      * Insert a given element into the BST tree
@@ -66,6 +70,18 @@ class BinarySearchTree {
             return find(tree.right, elem);
     }
 
+    public boolean findIterative(int elem) {
+        BSTNode current = root;
+        while (current != null) {
+            if (current.data == elem)
+                return true;
+            if (current.data < elem)
+                current = current.right;
+            else
+                current = current.left;
+        }
+        return false;
+    }
     /**
      * Insert elem into the tree with the given root
      * @param tree root of a tree
