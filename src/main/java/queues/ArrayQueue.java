@@ -4,8 +4,6 @@ package queues;
  */
 public class ArrayQueue implements Queue {
 
-	static final int defaultsize = 100;
-
 	private Object data[]; // the array that will store the queue
 	private int head;
 	private int tail;
@@ -16,13 +14,6 @@ public class ArrayQueue implements Queue {
 		head = 0;
 		tail = 0;
 		size = maxsize;
-	}
-
-	public ArrayQueue() {
-		data = new Object[defaultsize];
-		head = 0;
-		tail = 0;
-		size = defaultsize;
 	}
 
 	/** Add an element to the end of the queue, if it's not full */
@@ -44,8 +35,10 @@ public class ArrayQueue implements Queue {
 		Object retval;
 
 		// Check if the queue is empty
-		if (head == tail)
+		if (empty()) {
+			System.out.println("Queue is empty");
 			return null;
+		}
 		retval = data[head];
 		head = (head + 1) % size;
 		return retval;

@@ -17,13 +17,14 @@ public class QueueWithTwoStacks {
      */
     public void enqueue(int elem) {
         //  FILL IN CODE
+
     }
 
     /**
      * Removes the element from the queue
      * @return the element in front of the queue that was removed
      */
-    public int dequeue() {
+    public Object dequeue() {
         //  FILL IN CODE
 
         return 0; // change
