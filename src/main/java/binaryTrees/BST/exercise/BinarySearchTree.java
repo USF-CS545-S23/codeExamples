@@ -1,5 +1,6 @@
 package binaryTrees.BST.exercise;
 
+import javax.management.BadBinaryOpValueExpException;
 import java.util.Stack;
 
 /** Implementation of a binary search tree.
@@ -52,13 +53,32 @@ class BinarySearchTree {
 
     /** Print the binary tree using a preorder traversal
      */
-    private void printPreorderIterative() {
+    public void printPreorderIterative() {
         if (root != null) {
             Stack<BSTNode> stack = new Stack<>();
             stack.push(root);
             // FILL IN CODE
 
         }
+    }
+
+    public void printPostorderSimple() {
+        printPostorderSimple(root);
+    }
+
+    private void printPostorderSimple(BSTNode tree) {
+        if (tree == null) {
+            return;
+        }
+        printPostorderSimple(tree.left);
+        printPostorderSimple(tree.right);
+        System.out.print(tree.data + " ");
+    }
+
+    private int countNodes(BSTNode tree) {
+        // return the number of nodes n the tree
+        // FILL IN CODE
+        return 0;
     }
 
     public static void main(String[] args) {
@@ -70,6 +90,6 @@ class BinarySearchTree {
         tree.insertIterative(10);
         tree.insertIterative(6);
         tree.insertIterative(12);
-       // tree.printPreorderIterative();
+        //tree.printPreorderSimple();
     }
 }
