@@ -74,11 +74,14 @@ class MyBinarySearchTree {
      * @param node root of the tree
      */
     private void printPreorder(BSTNode node) {
-        if (node == null)
-            return;
-        System.out.print(node.data + " ");
-        printPreorder(node.left);
-        printPreorder(node.right);
+        if (node != null) {
+            System.out.print(node.data + " ");
+            printPreorder(node.left);
+            printPreorder(node.right);
+        }
+        else {
+            System.out.print("/");
+        }
     }
 
     /**
@@ -86,10 +89,8 @@ class MyBinarySearchTree {
      * @param node root of the tree
      */
     private void printPostorder(BSTNode node) {
-        if (node == null) {
-            return;
-        }
         // FILL IN CODE
+
     }
 
     /** Compute the height (the number of levels) of the tree
@@ -97,10 +98,11 @@ class MyBinarySearchTree {
      * @return height
      */
     private int height(BSTNode node) {
-        // FILL IN CODE
+        if (node == null)
+            return 0;
+        int largestHeight = Math.max(height(node.left), height(node.right));
 
-
-        return 0; // change
+        return largestHeight + 1;
     }
 
     /**
@@ -111,6 +113,7 @@ class MyBinarySearchTree {
     private int countNodes(BSTNode node) {
         // return the number of nodes n the tree
         // FILL IN CODE
+
         return 0;
     }
 
@@ -137,7 +140,8 @@ class MyBinarySearchTree {
         tree.insert(6);
         tree.insert(12);
         tree.printPreorder();
-        tree.printPostorder();
         System.out.println(tree.height());
+        System.out.println(tree.countNodes());
+        System.out.println(tree.countLeaves());
     }
 }
