@@ -6,7 +6,7 @@ public class MinHeap {
     private int size; // the current number of elements in the array
 
     /**
-     * Constructor
+     * Constructor for the min heap
      * @param max the maximum size of the heap
      */
     public MinHeap(int max) {
