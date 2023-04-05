@@ -104,9 +104,10 @@ public class MinHeap {
      * @param position the index of the element in the heap
      */
     private void pushdown(int position) {
-        int smallestchild;
+        int smallestChild;
         while (!isLeaf(position)) {
           // FILL IN CODE
+
         }
     }
 
@@ -120,8 +121,8 @@ public class MinHeap {
         minheap.print();
 
         System.out.println();
-        System.out.println(minheap.removeMin());
-        minheap.print();
+        //System.out.println(minheap.removeMin());
+        //minheap.print();
     }
 
 }
