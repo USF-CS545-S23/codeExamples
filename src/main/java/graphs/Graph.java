@@ -5,7 +5,7 @@ public class Graph {
 
     // Static nested class Edge
     public static class Edge { // Class Edge
-        private int neighbor; // id of the neighbor
+        private int neighbor; // id of the neighbor (id of the destination node)
         private Edge next; // reference to the next "edge"
 
         public Edge(int neighbor) {
@@ -40,12 +40,8 @@ public class Graph {
 
     public void printNeighbors(int vertexId) {
         Edge current = graph[vertexId];
-        while (current != null) {
-            System.out.println(current.neighbor);
-            current = current.next;
-        }
+        // FILL IN CODE
     }
-
 
     public static void main(String[] args) {
         Graph g = new Graph(8);
